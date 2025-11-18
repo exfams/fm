@@ -58,35 +58,24 @@
       }
 
       .nav-links {
-        display: flex;
-        gap: 2rem;
-        list-style: none
-      }
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;   /* ⬅️ bikin teks di tengah secara vertical */
+  
+        margin-left: -60px
+}
 
-      .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        font-size: .95rem;
-        transition: .3s
-      }
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: .80rem;
+  transition: .3s;
+}
+
 
       .nav-links a:hover {
         opacity: .8
-      }
-
-      .login-btn {
-        background: #fff;
-        color: #2196f3;
-        padding: .5rem 1.5rem;
-        border-radius: 50px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: .3s
-      }
-
-      .login-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, .2)
       }
 
       .menu-toggle {
@@ -94,7 +83,7 @@
         background: none;
         border: none;
         color: #fff;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         cursor: pointer
       }
 
@@ -408,12 +397,6 @@
         cursor: pointer
       }
 
-      /* === Responsive === */
-      @media(max-width:768px) {
-        .nav-links {
-          display: none
-        }
-
         .menu-toggle {
           display: block
         }
@@ -442,7 +425,7 @@
         .logo {
           font-size: 1.2rem
         }
-      }
+      
 
       @media(max-width:480px) {
         .hero {
@@ -584,19 +567,24 @@
     </style>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav>
-      <div class="logo move">
-        <img src="https://exfams.github.io/FamsssPay-Image/logoF.png" alt="Logo" />
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li>
-          <a href="#" class="login-btn">Masuk</a>
-        </li>
-      </ul>
-      <button class="menu-toggle">☰</button>
-    </nav>
+    
+<!-- Navbar -->
+<nav>
+  <div class="logo move">
+    <img src="https://exfams.github.io/FamsssPay-Image/logoF.png" alt="Logo" />
+
+
+
+  </div>
+  <ul class="nav-links">
+    <li><a href="#beranda">Beranda</a></li>
+    <li><a href="#layanan">Layanan</a></li>
+    <li><a href="#tentang">Tentang</a></li>
+  </ul>
+
+  <button class="menu-toggle">☰</button>
+</nav>
+
     <!-- Fullscreen Menu Apple Style -->
     <div class="apple-menu" id="appleMenu">
       <button class="close-apple-menu" id="closeMenu">×</button>
@@ -693,7 +681,7 @@
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
             <p class="testimonial-text">“FamsssPay bagus banget aplikasinya, cepet dan nggak bikin pusing. Bener-bener bantu banget pas lagi butuh instant.”</p>
-            <div class="testimonial-author">— Dicaantiee</div>
+            <div class="testimonial-author">— Bella Cell</div>
           </div>
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
