@@ -766,20 +766,22 @@
       <p>&copy; 2025 FamsssPay - All Rights Reserved. | Dipercaya oleh ribuan reseller dan bisnis online</p>
     </footer>
 
-    <script>
-function isInstagram() {
-    return navigator.userAgent.includes("Instagram");
-}
-function isTikTok() {
-    return navigator.userAgent.toLowerCase().includes("tiktok");
-}
-function isAndroid() {
-    return /android/i.test(navigator.userAgent);
-}
-function isIOS() {
-    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+<script>
+// Deteksi instagram webview
+function isInstagramWebView() {
+    return /Instagram|wv/.test(navigator.userAgent);
 }
 
+// Deteksi tiktok webview
+function isTikTokWebView() {
+    return /TTWebView|tiktok/i.test(navigator.userAgent);
+}
+
+// Device
+function isAndroid() { return /android/i.test(navigator.userAgent); }
+function isIOS() { return /iPhone|iPad|iPod/i.test(navigator.userAgent); }
+
+// Tampilkan popup
 function showPopup(title, message) {
     document.getElementById("popupTitle").innerText = title;
     document.getElementById("popupMessage").innerText = message;
@@ -790,28 +792,26 @@ function closePopup() {
     document.getElementById("appPopup").style.display = "none";
 }
 
-// 🔥 CEK KONDISI SAAT PAGE DIBUKA
-window.onload = function() {
+// Jalankan saat halaman dibuka
+window.onload = function () {
 
-    // iOS → langsung tampilkan popup iOS
+    // iOS
     if (isIOS()) {
-        showPopup(
-            "Tidak Tersedia di iOS",
-            "Maaf, aplikasi FamsssPay hanya tersedia untuk Android."
-        );
+        showPopup("Tidak Tersedia di iOS",
+                  "Maaf, aplikasi FamsssPay hanya tersedia untuk Android.");
         return;
     }
 
-    // Jika Android + Instagram/TikTok
-    if (isAndroid() && (isInstagram() || isTikTok())) {
+    // ANDROID + TikTok / Instagram WebView
+    if (isAndroid() && (isInstagramWebView() || isTikTokWebView())) {
         showPopup(
             "Silakan Buka di Browser",
-            "Download Aplikasi FamsssPay melalui Browser. " +
-            "Klik titik tiga di pojok kanan atas lalu pilih 'Buka di browser'."
+            "Download Aplikasi FamsssPay melalui Browser. Klik titik tiga di pojok kanan atas lalu pilih 'Buka di browser'."
         );
     }
 };
 </script>
+
 
     <script>
 // Fungsi animasi count up
@@ -885,7 +885,7 @@ document.querySelectorAll(".stat-item").forEach(item => {
   }
 });
 
-setInterva(function () {
+setInterval(function () {
     if (window.outerWidth - window.innerWidth > 200 || 
         window.outerHeight - window.innerHeight > 200) {
         location.reload();
