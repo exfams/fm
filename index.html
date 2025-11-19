@@ -666,13 +666,12 @@
   <div class="download-help-box">
       <h3>Perhatian</h3>
       <p>
-        Jika tidak berhasil mendownload, klik titik tiga di pojok kanan atas,
+        Jika tidak berhasil mendownload, klik titik tiga <b>(•••)</b> di pojok kanan atas,
         lalu pilih <b>Buka di browser</b>. Pastikan sinyal stabil dan penyimpanan ponsel tidak penuh.
       </p>
       <button id="closeDownloadHelpPopup">Mengerti</button>
   </div>
 </div>
-
 
 
 <!-- Navbar -->
@@ -766,7 +765,7 @@
       <div class="feature-icon">
         <img src="https://img.icons8.com/?size=100&id=uUIglpg1NDEw&format=png&color=000000" alt="Icon QRIS">
       </div>
-      <h3>Fitur QRIS MerchanPay</h3>
+      <h3>Fitur QRIS MerchantPay</h3>
       <p>Memudahkan pengguna menerima Transaksi atau Topup saldo FamsssPay.</p>
     </div>
 
@@ -824,14 +823,45 @@
     </footer>
 
 <script>
-document.querySelector(".cta-btn").addEventListener("click", function() {
-    document.getElementById("downloadHelpPopup").style.display = "flex";
+// Deteksi browser eksternal yang aman
+function isExternalBrowser() {
+    const ua = navigator.userAgent.toLowerCase();
+
+    return (
+        ua.includes("chrome") ||
+        ua.includes("firefox") ||
+        ua.includes("opr") ||            // Opera
+        ua.includes("opera") ||
+        ua.includes("edg") ||            // Edge
+        ua.includes("samsungbrowser") ||
+        ua.includes("ucbrowser") ||
+        ua.includes("brave") ||
+        ua.includes("vivaldi") ||
+        ua.includes("duckduckgo") ||
+        ua.includes("miuibrowser") ||
+        ua.includes("huawei") ||
+        ua.includes("crios") ||          // Chrome iOS
+        ua.includes("fxios")             // Firefox iOS
+    );
+}
+
+// Klik tombol download
+document.querySelector(".cta-btn").addEventListener("click", function(event) {
+
+    // Jika bukan browser eksternal → tampilkan popup
+    if (!isExternalBrowser()) {
+        document.getElementById("downloadHelpPopup").style.display = "flex";
+    }
+
+    // tetap lanjutkan download normal (jangan cegah link)
 });
 
+// Tutup popup
 document.getElementById("closeDownloadHelpPopup").addEventListener("click", function() {
     document.getElementById("downloadHelpPopup").style.display = "none";
 });
 </script>
+
 
 
 <script>
