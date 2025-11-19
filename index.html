@@ -658,7 +658,7 @@
   <div class="popup-box">
       <h3>Aplikasi Tidak Tersedia</h3>
       <p>Maaf, aplikasi FamsssPay hanya tersedia untuk Android.</p>
-  </div>
+  </div>   
 </div>
 
 <!-- 🔥 POPUP DOWNLOAD HELP -->
@@ -822,17 +822,32 @@
       <p>&copy; 2025 FamsssPay - All Rights Reserved. | Dipercaya oleh ribuan reseller dan bisnis online</p>
     </footer>
 
+
 <script>
-// Deteksi browser eksternal yang aman
+
+// Deteksi TikTok webview
+function isTikTokWebView() {
+    const ua = navigator.userAgent.toLowerCase();
+    return (
+        ua.includes("tiktok") ||
+        ua.includes("ttwebview") ||
+        ua.includes("musical")
+    );
+}
+
+// Deteksi browser eksternal normal (Chrome, Firefox, Edge, dll)
 function isExternalBrowser() {
     const ua = navigator.userAgent.toLowerCase();
+
+    // Jika TikTok → TIDAK dianggap external browser
+    if (isTikTokWebView()) return false;
 
     return (
         ua.includes("chrome") ||
         ua.includes("firefox") ||
-        ua.includes("opr") ||            // Opera
+        ua.includes("opr") ||
         ua.includes("opera") ||
-        ua.includes("edg") ||            // Edge
+        ua.includes("edg") ||
         ua.includes("samsungbrowser") ||
         ua.includes("ucbrowser") ||
         ua.includes("brave") ||
@@ -840,20 +855,24 @@ function isExternalBrowser() {
         ua.includes("duckduckgo") ||
         ua.includes("miuibrowser") ||
         ua.includes("huawei") ||
-        ua.includes("crios") ||          // Chrome iOS
-        ua.includes("fxios")             // Firefox iOS
+        ua.includes("crios") ||
+        ua.includes("fxios")
     );
 }
 
 // Klik tombol download
-document.querySelector(".cta-btn").addEventListener("click", function(event) {
+document.querySelector(".cta-btn").addEventListener("click", function() {
 
-    // Jika bukan browser eksternal → tampilkan popup
+    // Jika Anda buka di TikTok → popup WAJIB muncul
+    if (isTikTokWebView()) {
+        document.getElementById("downloadHelpPopup").style.display = "flex";
+        return;
+    }
+
+    // Jika bukan browser eksternal → popup muncul
     if (!isExternalBrowser()) {
         document.getElementById("downloadHelpPopup").style.display = "flex";
     }
-
-    // tetap lanjutkan download normal (jangan cegah link)
 });
 
 // Tutup popup
@@ -861,7 +880,6 @@ document.getElementById("closeDownloadHelpPopup").addEventListener("click", func
     document.getElementById("downloadHelpPopup").style.display = "none";
 });
 </script>
-
 
 
 <script>
