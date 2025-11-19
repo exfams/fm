@@ -620,12 +620,16 @@
     <!-- Stats Section -->
 <section class="stats">
   <div class="stat-item">
-    <h3 class="count" data-target="10000">10K+</h3>
+    <h3 class="count" data-target="2200">10K+</h3>
     <p>Pengguna Aktif</p>
   </div>
   <div class="stat-item">
-    <h3 class="count" data-target="50000">50K+</h3>
+    <h3 class="count" data-target="15000">50K+</h3>
     <p>Transaksi Bulanan</p>
+  </div>
+  <div class="stat-item">
+    <h3 class="count" data-target="50000000">50K+</h3>
+    <p>Omset Bulanan</p>
   </div>
   <div class="stat-item">
     <h3 class="count" data-target="99.8">99.8%</h3>
@@ -784,7 +788,7 @@ document.querySelectorAll(".stat-item").forEach(item => {
   }
 });
 
-setInterval(function () {
+setInterva(function () {
     if (window.outerWidth - window.innerWidth > 200 || 
         window.outerHeight - window.innerHeight > 200) {
         location.reload();
