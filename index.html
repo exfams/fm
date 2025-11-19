@@ -561,157 +561,63 @@
   margin-bottom: 10px;
 }
 
-   /* overlay */
-    .inapp-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      padding: 20px;
-    }
-
-    /* modal box */
-    .inapp-modal {
-      width: 100%;
-      max-width: 420px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-      padding: 20px;
-      text-align: left;
-      transform: translateY(12px);
-      transition: transform .18s ease, opacity .18s ease;
-      opacity: 0;
-    }
-
-    .inapp-overlay.show { display: flex; }
-    .inapp-overlay.show .inapp-modal { transform: translateY(0); opacity: 1; }
-
-    .inapp-header {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    .inapp-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
-      background: linear-gradient(135deg,#ffb347,#ffcc33);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: #fff;
-      font-size: 18px;
-    }
-    .inapp-title {
-      font-size: 16px;
-      font-weight: 700;
-      margin: 0;
-      color: #111;
-    }
-    .inapp-desc {
-      margin: 12px 0 18px 0;
-      font-size: 14px;
-      color: #222;
-      line-height: 1.4;
-    }
-
-    .inapp-actions {
-      display: flex;
-      gap: 8px;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-    .btn {
-      cursor: pointer;
-      border: none;
-      padding: 10px 12px;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    .btn-primary {
-      background: #111827;
-      color: #fff;
-      box-shadow: 0 6px 12px rgba(17,24,39,0.12);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: #111827;
-      border: 1px solid rgba(17,24,39,0.06);
-    }
-
-    .inapp-footer {
-      display:flex;
-      align-items:center;
-      gap:8px;
-      margin-top:12px;
-      font-size:13px;
-      color:#555;
-    }
-
-    .inapp-close {
-      position: absolute;
-      right: 16px;
-      top: 12px;
-      background: none;
-      border: none;
-      font-size: 18px;
-      color: #666;
-      cursor: pointer;
-    }
-
-    @media (max-width:420px){
-      .inapp-modal { padding: 16px; }
-    }
-
       }
+
+      .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+.popup-box {
+    background: #fff;
+    width: 85%;
+    max-width: 380px;
+    padding: 20px 25px;
+    text-align: center;
+    border-radius: 15px;
+    animation: pop .3s ease;
+}
+.popup-box h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.popup-box p {
+    font-size: 15px;
+    margin: 10px 0 20px;
+}
+.popup-box button {
+    background: #2196f3;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+@keyframes pop {
+    from { transform: scale(.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
 
     </style>
   </head>
   <body>
-
-  <!-- =====================
-       Popup untuk In-App Browser
-       ===================== -->
-  <div id="inappOverlay" class="inapp-overlay" role="dialog" aria-modal="true" aria-labelledby="inappTitle">
-    <div class="inapp-modal" role="document">
-      <button id="inappClose" class="inapp-close" aria-label="Tutup">&times;</button>
-
-      <div class="inapp-header">
-        <div class="inapp-icon">FP</div>
-        <div>
-          <h3 id="inappTitle" class="inapp-title">Buka di Browser</h3>
-        </div>
-      </div>
-
-      <p class="inapp-desc" id="inappMessage">
-        Download Aplikasi FamsssPay melalui browser. Klik titik tiga di atas pojok kanan atas lalu pilih "Buka di browser".
-      </p>
-
-      <div class="inapp-footer">
-        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
-          <input id="inappDontShow" type="checkbox" />
-          <span>Jangan tampil lagi</span>
-        </label>
-      </div>
-
-      <div class="inapp-actions" style="margin-top:12px;">
-        <button id="inappOpen" class="btn btn-primary">Buka di Browser</button>
-        <button id="inappCancel" class="btn btn-ghost">Tutup</button>
-      </div>
-    </div>
-  </div>
-
-
     
+<!-- 🔥 POPUP HTML -->
+<div id="appPopup" class="popup-overlay" style="display:none;">
+  <div class="popup-box">
+      <h3 id="popupTitle"></h3>
+      <p id="popupMessage"></p>
+      <button onclick="closePopup()">Tutup</button>
+  </div>
+</div>
+
 <!-- Navbar -->
 <nav>
   <div class="logo move">
@@ -755,7 +661,6 @@
   <span style="background:#2196F3; color:#fff; padding:4px 10px; border-radius:6px;">Otomatis</span><br>
   Terintegrasi
 </h1>
-
 
       <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/new.png?w=576" alt="Hero Image" class="hero-img">
       <p>Solusi lengkap untuk TopUp, Bayar Tagihan, dan Otomatisasi transaksi dengan sistem aman dan stabil.</p>
@@ -861,86 +766,52 @@
       <p>&copy; 2025 FamsssPay - All Rights Reserved. | Dipercaya oleh ribuan reseller dan bisnis online</p>
     </footer>
 
-  <script>
-    (function () {
-      const ua = navigator.userAgent || navigator.vendor || window.opera || '';
-      const isInstagram = /Instagram/i.test(ua) || /FBAN|FBAV/i.test(ua) && /Instagram/i.test(ua);
-      const isTikTok = /TikTok|musically|com.zhiliaoapp/i.test(ua);
+    <script>
+function isInstagram() {
+    return navigator.userAgent.includes("Instagram");
+}
+function isTikTok() {
+    return navigator.userAgent.toLowerCase().includes("tiktok");
+}
+function isAndroid() {
+    return /android/i.test(navigator.userAgent);
+}
+function isIOS() {
+    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
 
-      // opsi: hanya tampil jika user agent cocok
-      const inAppDetected = isInstagram || isTikTok;
+function showPopup(title, message) {
+    document.getElementById("popupTitle").innerText = title;
+    document.getElementById("popupMessage").innerText = message;
+    document.getElementById("appPopup").style.display = "flex";
+}
 
-      // key penyimpanan jika user pilih "jangan tampil lagi"
-      const storageKey = 'famssspay_hide_inapp_popup_v1';
+function closePopup() {
+    document.getElementById("appPopup").style.display = "none";
+}
 
-      function showPopup(source) {
-        const overlay = document.getElementById('inappOverlay');
-        const message = document.getElementById('inappMessage');
+// 🔥 CEK KONDISI SAAT PAGE DIBUKA
+window.onload = function() {
 
-        // pesan bisa disesuaikan tergantung sumber
-        if (source === 'instagram') {
-          message.textContent = 'Download Aplikasi FamsssPay melalui browser. Klik titik tiga di atas pojok kanan atas lalu pilih "Buka di browser".';
-        } else if (source === 'tiktok') {
-          message.textContent = 'Download Aplikasi FamsssPay melalui browser. Klik titik tiga di atas pojok kanan atas lalu pilih "Buka di browser".';
-        } else {
-          message.textContent = 'Download Aplikasi FamsssPay melalui browser. Klik titik tiga di atas pojok kanan atas lalu pilih "Buka di browser".';
-        }
+    // iOS → langsung tampilkan popup iOS
+    if (isIOS()) {
+        showPopup(
+            "Tidak Tersedia di iOS",
+            "Maaf, aplikasi FamsssPay hanya tersedia untuk Android."
+        );
+        return;
+    }
 
-        overlay.classList.add('show');
-      }
-
-      function hidePopup() {
-        const overlay = document.getElementById('inappOverlay');
-        overlay.classList.remove('show');
-      }
-
-      // logic utama: kalau in-app dan user belum menonaktifkan popup
-      try {
-        const disabled = localStorage.getItem(storageKey) === '1';
-        if (inAppDetected && !disabled) {
-          const source = isInstagram ? 'instagram' : (isTikTok ? 'tiktok' : 'unknown');
-          // tampilkan popup
-          // sedikit delay agar DOM selesai render (halus)
-          setTimeout(() => showPopup(source), 250);
-        }
-      } catch (e) {
-        // kalau localStorage error, tetap coba tampilkan
-        if (inAppDetected) setTimeout(() => showPopup(isInstagram ? 'instagram' : 'tiktok'), 250);
-      }
-
-      // tombol
-      document.getElementById('inappClose').addEventListener('click', hidePopup);
-      document.getElementById('inappCancel').addEventListener('click', hidePopup);
-
-      // "Buka di Browser" -> kita coba arahkan pengguna ke URL yang sama tapi memaksa agar membuka di sistem browser.
-      // Di banyak in-app browser, window.open dengan target _blank akan memicu buka di browser eksternal.
-      document.getElementById('inappOpen').addEventListener('click', function () {
-        const url = window.location.href;
-        // cobalah open _blank
-        try {
-          window.open(url, '_blank');
-        } catch (err) {
-          // fallback: ubah location (mungkin tetap di-app)
-          window.location.href = url;
-        }
-        hidePopup();
-      });
-
-      // simpan preferensi "jangan tampil lagi"
-      document.getElementById('inappDontShow').addEventListener('change', function (e) {
-        try {
-          if (e.target.checked) {
-            localStorage.setItem(storageKey, '1');
-          } else {
-            localStorage.removeItem(storageKey);
-          }
-        } catch (err) {
-          // ignore
-        }
-      });
-    })();
-  </script>
-
+    // Jika Android + Instagram/TikTok
+    if (isAndroid() && (isInstagram() || isTikTok())) {
+        showPopup(
+            "Silakan Buka di Browser",
+            "Download Aplikasi FamsssPay melalui Browser. " +
+            "Klik titik tiga di pojok kanan atas lalu pilih 'Buka di browser'."
+        );
+    }
+};
+</script>
 
     <script>
 // Fungsi animasi count up
