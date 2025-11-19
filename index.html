@@ -563,7 +563,7 @@
 
       }
 
-      .popup-overlay {
+.popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -575,32 +575,76 @@
     align-items: center;
     z-index: 999999;
 }
+
 .popup-box {
     background: #fff;
     width: 85%;
-    max-width: 380px;
-    padding: 20px 25px;
+    max-width: 350px;
+    padding: 22px;
     text-align: center;
     border-radius: 15px;
-    animation: pop .3s ease;
+    animation: popup .3s ease;
 }
+
 .popup-box h3 {
     font-size: 20px;
     font-weight: 700;
+    margin-bottom: 10px;
 }
+
 .popup-box p {
     font-size: 15px;
-    margin: 10px 0 20px;
 }
-.popup-box button {
+
+@keyframes popup {
+    from { transform: scale(.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.download-help-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+.download-help-box {
+    background: #fff;
+    width: 85%;
+    max-width: 350px;
+    padding: 22px;
+    text-align: center;
+    border-radius: 15px;
+    animation: downloadHelpPop .3s ease;
+}
+
+.download-help-box h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.download-help-box p {
+    font-size: 15px;
+    margin: 12px 0 20px;
+}
+
+.download-help-box button {
     background: #2196f3;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 22px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
+    font-size: 15px;
 }
-@keyframes pop {
+
+@keyframes downloadHelpPop {
     from { transform: scale(.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
@@ -609,14 +653,27 @@
   </head>
   <body>
     
-<!-- 🔥 POPUP HTML -->
-<div id="appPopup" class="popup-overlay" style="display:none;">
+<!-- 🔥 POPUP UNTUK IOS -->
+<div id="iosPopup" class="popup-overlay" style="display:none;">
   <div class="popup-box">
-      <h3 id="popupTitle"></h3>
-      <p id="popupMessage"></p>
-      <button onclick="closePopup()">Tutup</button>
+      <h3>Aplikasi Tidak Tersedia</h3>
+      <p>Maaf, aplikasi FamsssPay hanya tersedia untuk Android.</p>
   </div>
 </div>
+
+<!-- 🔥 POPUP DOWNLOAD HELP -->
+<div id="downloadHelpPopup" class="download-help-overlay" style="display:none;">
+  <div class="download-help-box">
+      <h3>Perhatian</h3>
+      <p>
+        Jika tidak berhasil mendownload, klik titik tiga di pojok kanan atas,
+        lalu pilih <b>Buka di browser</b>. Pastikan sinyal stabil dan penyimpanan ponsel tidak penuh.
+      </p>
+      <button id="closeDownloadHelpPopup">Mengerti</button>
+  </div>
+</div>
+
+
 
 <!-- Navbar -->
 <nav>
@@ -767,47 +824,32 @@
     </footer>
 
 <script>
-// Deteksi instagram webview
-function isInstagramWebView() {
-    return /Instagram|wv/.test(navigator.userAgent);
+document.querySelector(".cta-btn").addEventListener("click", function() {
+    document.getElementById("downloadHelpPopup").style.display = "flex";
+});
+
+document.getElementById("closeDownloadHelpPopup").addEventListener("click", function() {
+    document.getElementById("downloadHelpPopup").style.display = "none";
+});
+</script>
+
+
+<script>
+// Deteksi iOS
+function isIOS() {
+    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
 }
 
-// Deteksi tiktok webview
-function isTikTokWebView() {
-    return /TTWebView|tiktok/i.test(navigator.userAgent);
-}
-
-// Device
-function isAndroid() { return /android/i.test(navigator.userAgent); }
-function isIOS() { return /iPhone|iPad|iPod/i.test(navigator.userAgent); }
-
-// Tampilkan popup
-function showPopup(title, message) {
-    document.getElementById("popupTitle").innerText = title;
-    document.getElementById("popupMessage").innerText = message;
-    document.getElementById("appPopup").style.display = "flex";
-}
-
-function closePopup() {
-    document.getElementById("appPopup").style.display = "none";
-}
-
-// Jalankan saat halaman dibuka
-window.onload = function () {
-
-    // iOS
+// Munculkan popup iOS
+window.onload = function() {
     if (isIOS()) {
-        showPopup("Tidak Tersedia di iOS",
-                  "Maaf, aplikasi FamsssPay hanya tersedia untuk Android.");
-        return;
-    }
+        document.getElementById("iosPopup").style.display = "flex";
 
-    // ANDROID + TikTok / Instagram WebView
-    if (isAndroid() && (isInstagramWebView() || isTikTokWebView())) {
-        showPopup(
-            "Silakan Buka di Browser",
-            "Download Aplikasi FamsssPay melalui Browser. Klik titik tiga di pojok kanan atas lalu pilih 'Buka di browser'."
-        );
+        // ❌ Tidak bisa ditutup — menonaktifkan back & tap
+        document.body.style.overflow = "hidden";
+        document.getElementById("iosPopup").addEventListener("click", e => {
+            e.stopPropagation();
+        });
     }
 };
 </script>
