@@ -825,61 +825,44 @@
 
 <script>
 
-// Deteksi TikTok webview
+// Deteksi TikTok WebView via window.open test
 function isTikTokWebView() {
-    const ua = navigator.userAgent.toLowerCase();
-    return (
-        ua.includes("tiktok") ||
-        ua.includes("ttwebview") ||
-        ua.includes("musical")
-    );
+    let test = window.open("", "_blank");
+    if (test === null) {
+        return true; // pasti WebView termasuk TikTok
+    }
+    test.close(); // browser normal → tutup tab dummy
+    return false;
 }
 
-// Deteksi browser eksternal normal (Chrome, Firefox, Edge, dll)
-function isExternalBrowser() {
-    const ua = navigator.userAgent.toLowerCase();
+// Klik tombol download (dua tombol)
+function handleDownloadClick() {
 
-    // Jika TikTok → TIDAK dianggap external browser
-    if (isTikTokWebView()) return false;
-
-    return (
-        ua.includes("chrome") ||
-        ua.includes("firefox") ||
-        ua.includes("opr") ||
-        ua.includes("opera") ||
-        ua.includes("edg") ||
-        ua.includes("samsungbrowser") ||
-        ua.includes("ucbrowser") ||
-        ua.includes("brave") ||
-        ua.includes("vivaldi") ||
-        ua.includes("duckduckgo") ||
-        ua.includes("miuibrowser") ||
-        ua.includes("huawei") ||
-        ua.includes("crios") ||
-        ua.includes("fxios")
-    );
-}
-
-// Klik tombol download
-document.querySelector(".cta-btn").addEventListener("click", function() {
-
-    // Jika Anda buka di TikTok → popup WAJIB muncul
+    // Jika TikTok WebView → popup harus muncul
     if (isTikTokWebView()) {
         document.getElementById("downloadHelpPopup").style.display = "flex";
         return;
     }
 
-    // Jika bukan browser eksternal → popup muncul
-    if (!isExternalBrowser()) {
-        document.getElementById("downloadHelpPopup").style.display = "flex";
-    }
-});
+    // Jika browser normal → tidak munculkan popup
+}
 
-// Tutup popup
-document.getElementById("closeDownloadHelpPopup").addEventListener("click", function() {
-    document.getElementById("downloadHelpPopup").style.display = "none";
-});
+// 🔥 Pasang event di dua tombol download
+let btn1 = document.querySelector(".cta-btn");
+if (btn1) btn1.addEventListener("click", handleDownloadClick);
+
+let btn2 = document.querySelector(".cta-btn-2");
+if (btn2) btn2.addEventListener("click", handleDownloadClick);
+
+// Tombol tutup popup
+document
+    .getElementById("closeDownloadHelpPopup")
+    .addEventListener("click", function() {
+        document.getElementById("downloadHelpPopup").style.display = "none";
+    });
+
 </script>
+
 
 
 <script>
@@ -975,7 +958,7 @@ document.querySelectorAll(".stat-item").forEach(item => {
   }
 });
 
-setInterval(function () {
+setInterva(function () {
     if (window.outerWidth - window.innerWidth > 200 || 
         window.outerHeight - window.innerHeight > 200) {
         location.reload();
