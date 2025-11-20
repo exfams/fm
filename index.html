@@ -666,17 +666,6 @@
   </div>   
 </div>
 
-<!-- 🔥 POPUP DOWNLOAD HELP -->
-<div id="downloadHelpPopup" class="download-help-overlay" style="display:none;">
-  <div class="download-help-box">
-      <h3>Perhatian</h3>
-      <p>
-        Jika tidak berhasil mendownload, klik titik tiga <b>(•••)</b> di pojok kanan atas,
-        lalu pilih <b>Buka di browser</b>. Pastikan sinyal stabil dan penyimpanan ponsel tidak penuh.
-      </p>
-      <button id="closeDownloadHelpPopup">Mengerti</button>
-  </div>
-</div>
 
 
 <!-- Navbar -->
@@ -834,47 +823,6 @@
     </footer>
 
 
-<script>
-
-// Deteksi TikTok WebView via window.open test
-function isTikTokWebView() {
-    let test = window.open("", "_blank");
-    if (test === null) {
-        return true; // pasti WebView termasuk TikTok
-    }
-    test.close(); // browser normal → tutup tab dummy
-    return false;
-}
-
-// Klik tombol download (dua tombol)
-function handleDownloadClick() {
-
-    // Jika TikTok WebView → popup harus muncul
-    if (isTikTokWebView()) {
-        document.getElementById("downloadHelpPopup").style.display = "flex";
-        return;
-    }
-
-    // Jika browser normal → tidak munculkan popup
-}
-
-// 🔥 Pasang event di dua tombol download
-let btn1 = document.querySelector(".cta-btn");
-if (btn1) btn1.addEventListener("click", handleDownloadClick);
-
-let btn2 = document.querySelector(".cta-btn-2");
-if (btn2) btn2.addEventListener("click", handleDownloadClick);
-
-// Tombol tutup popup
-document
-    .getElementById("closeDownloadHelpPopup")
-    .addEventListener("click", function() {
-        document.getElementById("downloadHelpPopup").style.display = "none";
-    });
-
-</script>
-
-
 
 <script>
 // Deteksi iOS
@@ -969,7 +917,7 @@ document.querySelectorAll(".stat-item").forEach(item => {
   }
 });
 
-setInterval(function () {
+setInterva(function () {
     if (window.outerWidth - window.innerWidth > 200 || 
         window.outerHeight - window.innerHeight > 200) {
         location.reload();
