@@ -654,6 +654,84 @@
     to { transform: scale(1); opacity: 1; }
 }
 
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+  position: relative; /* penting untuk fade */
+}
+
+/* Efek fade kiri–kanan */
+.slider-container::before,
+.slider-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.slider-container::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, rgba(255,255,255,0));
+}
+
+.slider-container::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, rgba(255,255,255,0));
+}
+
+.slider-track {
+  display: flex;
+  width: calc(200%);
+  animation: slide-left 25s linear infinite;
+}
+
+.slider-track img {
+  width: 280px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+@keyframes slide-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .slider-track img {
+    width: 180px;
+    margin-right: 14px;
+  }
+
+  .slider-container::before,
+  .slider-container::after {
+    width: 50px; /* untuk HP fade lebih pas */
+  }
+}
+
+.play-anim {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlide 0.9s ease-out forwards;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
     </style>
   </head>
   <body>
@@ -711,7 +789,35 @@
 
       <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/new.png?w=576" alt="Hero Image" class="hero-img">
       <p>Solusi lengkap untuk TopUp e-Wallet, Game, Bayar Tagihan,Isi Paket Data,Pulsa dan Otomatisasi transaksi lainnya dengan sistem aman dan stabil.</p>
+      <!-- Logo Play Store -->
+<!-- Logo Play Store -->
+<a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" 
+         alt="Google Play"
+         class="play-anim"
+         style="width:150px; height:auto; display:block; margin:0 auto;">
+</a>
+<br>
       <a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" class="cta-btn">Dwonload Aplikasi</a>
+    
+      <br>
+      <!-- Slider Foto Berjalan -->
+<div class="slider-container">
+  <div class="slider-track">
+    <img src="https://play-lh.googleusercontent.com/_FQIk2zNah0Ap1HbcliV35xi5SGanqeVZ4HV2HTCKVV_9sJqIBIGaBp7KcDRjHSIbXO-ROWWx1HoIu-Pl3hZQg=w526-h296-rw" alt="">
+    <img src="https://play-lh.googleusercontent.com/BcxBs8Icc0s8k6tNKjN8bfBCSNLzaBAtHww3_xZ3Ru7CWYw-7qjpudNNqt-5AVzlUK_KvBdWIiE_T3PpR-2_Kg=w526-h296-rw" alt="">
+    <img src="https://play-lh.googleusercontent.com/KjuadQHoRF__4xRY5ShYMQ_NFjZHphj_GB18fUsPsNL11YB0xGmKjgPlFy6QFjXB6LntCXtqL7LfnXliZn6g=w526-h296-rw" alt="">
+    <img src="https://play-lh.googleusercontent.com/CCFmdaLOQknb6HYEk2IqhYsisy8FvPJeuZ-9_AzrRBw9k-Sp5aNF6FqJ7dzF_aHb2gWpFj96OUiZWRt-BRfgbg=w526-h296-rw" alt="">
+
+    <!-- Copy lagi buat efek infinite -->
+    <img src="https://play-lh.googleusercontent.com/_FQIk2zNah0Ap1HbcliV35xi5SGanqeVZ4HV2HTCKVV_9sJqIBIGaBp7KcDRjHSIbXO-ROWWx1HoIu-Pl3hZQg=w526-h296-rw" alt="">
+    <img src="https://play-lh.googleusercontent.com/BcxBs8Icc0s8k6tNKjN8bfBCSNLzaBAtHww3_xZ3Ru7CWYw-7qjpudNNqt-5AVzlUK_KvBdWIiE_T3PpR-2_Kg=w526-h296-rw" alt="">
+    <img src="https://play-lh.googleusercontent.com/KjuadQHoRF__4xRY5ShYMQ_NFjZHphj_GB18fUsPsNL11YB0xGmKjgPlFy6QFjXB6LntCXtqL7LfnXliZn6g=w526-h296-rw" alt="">
+    <img src="https://play-lh.googleusercontent.com/CCFmdaLOQknb6HYEk2IqhYsisy8FvPJeuZ-9_AzrRBw9k-Sp5aNF6FqJ7dzF_aHb2gWpFj96OUiZWRt-BRfgbg=w526-h296-rw" alt="">
+  </div>
+</div>
+
+    
     </section>
     <!-- Stats Section -->
 <section class="stats">
@@ -815,8 +921,17 @@
     <section class="cta-section">
       <h2>Time To Start!</h2>
       <p style="margin-bottom: 2rem; font-size: 1.05rem;">Belum terlambat memulai bisnis dari sekarang. Yuk! Mulai perjalanan usahamu dengan FamsssPay</p>
-      <a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" class="cta-btn">Dwonload FamsssPay .APK</a>
+      <a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" class="cta-btn">Dwonload FamsssPay .APK</a><br><br>
+
+<a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" 
+         alt="Google Play"
+         class="play-anim"
+         style="width:150px; height:auto; display:block; margin:0 auto;">
+</a>
     </section>
+
+    
     <!-- Footer -->
     <footer>
       <p>&copy; 2025 FamsssPay - All Rights Reserved. | Dipercaya oleh ribuan reseller dan bisnis online</p>
@@ -917,7 +1032,7 @@ document.querySelectorAll(".stat-item").forEach(item => {
   }
 });
 
-setInterva(function () {
+setInterval(function () {
     if (window.outerWidth - window.innerWidth > 200 || 
         window.outerHeight - window.innerHeight > 200) {
         location.reload();
