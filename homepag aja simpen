@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#2196f3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="icon" type="image/webp" href="https://images.bukaolshop.com/2025-07/191835/a3097c1bccf5619325.png">
+<link rel="apple-touch-icon" href="https://images.bukaolshop.com/2025-07/191835/a3097c1bccf5619325.png">
+    <title>FamsssPay - Platform Aplikasi Pembayaran Digital</title>
+
+
+    <style>
+      /* === Global === */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box
+      }
+
+      body {
+        font-family: 'Lexend Deca', 'Inter', 'Poppins', 'Segoe UI', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 100%;
+        user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    *::selection {
+      background: transparent;
+      color: inherit;
+    }
+
+    img, a, span, div, p {
+      -webkit-user-drag: none;
+      pointer-events: auto;
+    }
+      
+
+      /* === Navbar === */
+      nav {
+        background: #2196f3;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+        position: sticky;
+        top: 0;
+        z-index: 100
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        display: flex;
+        align-items: center
+      }
+
+      .nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;   /* ⬅️ bikin teks di tengah secara vertical */
+  
+        margin-left: -60px
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: .80rem;
+  transition: .3s;
+}
+
+
+      .nav-links a:hover {
+        opacity: .8
+      }
+
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.3rem;
+        cursor: pointer
+      }
+
+      /* === Hero Section === */
+      .hero {
+        background: #fff;
+        color: #000;
+        padding: 6rem 2rem;
+        text-align: center;
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        animation: slideDown .6s ease-out
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: .95;
+        animation: slideUp .6s ease-out .2s both
+      }
+
+      .cta-btn {
+        display: inline-block;
+        background: #2196f3;
+        color: #fff;
+        padding: .8rem 2.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: .3s;
+        animation: slideUp .6s ease-out .4s both
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, .2)
+      }
+
+      .hero-img {
+        
+        width: 95%;
+        max-width: 320px;
+        margin: 0 auto 5px;
+        display: block;
+        opacity: 0;
+        transform: translateY(25px);
+        animation: fadeUp 1.1s ease-out forwards
+      }
+
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(25px)
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0)
+        }
+      }
+
+      @keyframes slideDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-30px)
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0)
+        }
+      }
+
+      @keyframes slideUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px)
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0)
+        }
+      }
+
+      /* === Stats === */
+      .stats {
+        background: #f8f9fa;
+        padding: 3rem 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        text-align: center
+      }
+
+      .stat-item h3 {
+        font-size: 2rem;
+        color: #2196f3;
+        margin-bottom: .5rem
+      }
+
+      .stat-item p {
+        color: #666
+      }
+
+      /* === Features === */
+      .features {
+        padding: 4rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        color: #333
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem
+      }
+
+      .feature-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+        text-align: center;
+        transition: .3s
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(102, 126, 234, .2)
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: #2196f3;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1.8rem;
+        margin: 0 auto 1rem
+      }
+
+      .feature-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: .5rem;
+        color: #333
+      }
+
+      .feature-card p {
+        font-size: .95rem;
+        color: #666
+      }
+
+      /* === Testimonials === */
+      .testimonials {
+        background: #f8f9fa;
+        padding: 4rem 2rem
+      }
+
+      .testimonials-container {
+        max-width: 1200px;
+        margin: auto
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem
+      }
+
+      .testimonial-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+        border-left: 4px solid #2196f3
+      }
+
+      .testimonial-text {
+        color: #555;
+        margin-bottom: 1rem;
+        font-style: italic
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+        color: #333
+      }
+
+      .stars {
+        color: #ffc107;
+        margin-bottom: .5rem
+      }
+
+      /* === CTA Section === */
+      .cta-section {
+        background: #2196f3;
+        color: #fff;
+        text-align: center;
+        padding: 4rem 2rem
+      }
+
+      .cta-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem
+      }
+
+      .cta-section .cta-btn {
+        background: #fff;
+        color: #2196f3
+      }
+
+      /* === Footer === */
+      footer {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 2rem;
+        font-size: .9rem
+      }
+
+      /* === Apple Fullscreen Menu === */
+      .apple-menu {
+        position: fixed;
+        inset: 0;
+        background: #fff;
+        z-index: 99999;
+        padding: 25px;
+        overflow-y: auto;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform .55s cubic-bezier(.25, .1, .25, 1), opacity .4s ease;
+        pointer-events: none
+      }
+
+      .apple-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto
+      }
+
+      .close-apple-menu {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        float: right;
+        cursor: pointer;
+        color: #333;
+        margin-bottom: 20px
+      }
+
+      .apple-menu-list {
+        list-style: none;
+        margin-top: 50px;
+        padding: 0
+      }
+
+      .apple-menu-list li {
+        margin-bottom: 22px
+      }
+
+      .apple-menu-list a {
+        text-decoration: none;
+        font-size: 1.45rem;
+        font-weight: 600;
+        color: #222;
+        display: block;
+        padding: 6px 0;
+        transition: .25s
+      }
+
+      .apple-menu-list a:hover {
+        opacity: .55
+      }
+
+      @media(min-width:769px) {
+        .apple-menu {
+          display: none
+        }
+      }
+
+      /* === Logo Position Control === */
+      .logo.move {
+        margin-left: -60px
+      }
+
+      /* Perbaikan biar responsif */
+      .logo img {
+        width: 200px;
+        height: auto;
+        display: block;
+        cursor: pointer
+      }
+
+        .menu-toggle {
+          display: block
+        }
+
+        .hero h1 {
+          font-size: 1.8rem
+        }
+
+        .hero p {
+          font-size: 1rem
+        }
+
+        .section-title {
+          font-size: 1.5rem
+        }
+
+        .features-grid,
+        .testimonials-grid {
+          grid-template-columns: 1fr
+        }
+
+        .cta-section h2 {
+          font-size: 1.5rem
+        }
+
+        .logo {
+          font-size: 1.2rem
+        }
+      
+
+      @media(max-width:480px) {
+        .hero {
+          padding: 4rem 1rem;
+          min-height: 60vh
+        }
+
+        .hero h1 {
+          font-size: 1.5rem
+        }
+
+        .features,
+        .testimonials-container {
+          padding: 2rem 1rem
+        }
+
+        .feature-card,
+        .testimonial-card {
+          padding: 1.5rem
+        }
+
+        .stats {
+          gap: 1rem;
+          padding: 2rem 1rem
+        }
+
+        .stat-item h3 {
+          font-size: 1.5rem
+        }
+
+        .apple-menu-list a {
+          font-size: 1.25rem
+        }
+
+        .close-apple-menu {
+          font-size: 1.7rem
+        }
+
+        .apple-menu {
+          padding: 18px
+        }
+      
+    .stats {
+  display: flex;
+  flex-direction: column;   /* Jadi ke bawah */
+  align-items: center;      /* Tengah */
+  gap: 20px;                /* Jarak antar item */
+  padding: 30px 10px;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.stat-item.visible h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-item p {
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease 0.2s;
+}
+
+.stat-item.visible p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.clock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clock-icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #2196f3;
+  border-radius: 50%;
+  position: relative;
+  margin-bottom: 10px;
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Jarum menit */
+.clock-icon::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 18px;
+  background: #2196f3;
+  top: 7px;
+  left: 50%;
+  transform-origin: bottom;
+  animation: rotateHand 4s linear infinite;
+}
+
+/* Jarum jam */
+.clock-icon::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 14px;
+  background: #2196f3;
+  top: 12px;
+  left: 50%;
+  transform-origin: bottom;
+  animation: rotateHand 12s linear infinite;
+}
+
+@keyframes rotateHand {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.feature-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+      }
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+.popup-box {
+    background: #fff;
+    width: 85%;
+    max-width: 350px;
+    padding: 22px;
+    text-align: center;
+    border-radius: 15px;
+    animation: popup .3s ease;
+}
+
+.popup-box h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.popup-box p {
+    font-size: 15px;
+}
+
+@keyframes popup {
+    from { transform: scale(.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.download-help-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+.download-help-box {
+    background: #fff;
+    width: 85%;
+    max-width: 350px;
+    padding: 22px;
+    text-align: center;
+    border-radius: 15px;
+    animation: downloadHelpPop .3s ease;
+}
+
+.download-help-box h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.download-help-box p {
+    font-size: 15px;
+    margin: 12px 0 20px;
+}
+
+.download-help-box button {
+    background: #2196f3;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+@keyframes downloadHelpPop {
+    from { transform: scale(.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+  position: relative; /* penting untuk fade */
+}
+
+/* Efek fade kiri–kanan */
+.slider-container::before,
+.slider-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.slider-container::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, rgba(255,255,255,0));
+}
+
+.slider-container::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, rgba(255,255,255,0));
+}
+
+.slider-track {
+  display: flex;
+  width: calc(200%);
+  animation: slide-left 25s linear infinite;
+}
+
+.slider-track img {
+  width: 280px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+@keyframes slide-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .slider-track img {
+    width: 180px;
+    margin-right: 14px;
+  }
+
+  .slider-container::before,
+  .slider-container::after {
+    width: 50px; /* untuk HP fade lebih pas */
+  }
+}
+
+.play-anim {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlide 0.9s ease-out forwards;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    
+<!-- 🔥 POPUP UNTUK IOS -->
+<div id="iosPopup" class="popup-overlay" style="display:none;">
+  <div class="popup-box">
+      <h3>Aplikasi Tidak Tersedia</h3>
+      <p>Maaf, aplikasi FamsssPay hanya<br>tersedia untuk Android.</p>
+  </div>   
+</div>
+
+
+
+<!-- Navbar -->
+<nav>
+  <div class="logo move">
+    <img src="https://exfams.github.io/FamsssPay-Image/logoF.png" alt="Logo" />
+
+
+
+  </div>
+  <ul class="nav-links">
+    <li><a href="#beranda">Beranda</a></li>
+    <li><a href="#layanan">Layanan</a></li>
+    <li><a href="#tentang">Tentang</a></li>
+  </ul>
+
+  <button class="menu-toggle">☰</button>
+</nav>
+
+    <!-- Fullscreen Menu Apple Style -->
+    <div class="apple-menu" id="appleMenu">
+      <button class="close-apple-menu" id="closeMenu">×</button>
+      <ul class="apple-menu-list">
+        <li>
+          <a href="https://instagram.com/famssspay">Instagram</a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@famssspaymerchantt?is_from_webapp=1&sender_device=pc">Tiktok</a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@FamsssPayCH">YouTube</a>
+        </li>
+        <li><a href="/dwonload.php">dwonload</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="beranda">
+      <!-- 🔹 Gambar di atas teks -->
+      <h1>
+  Platform Aplikasi<br><span style="color:#2196F3;">Pembayaran Digital dengan<br></span>sistem server
+  <span style="background:#2196F3; color:#fff; padding:4px 10px; border-radius:6px;">Otomatis</span><br>
+  Terintegrasi
+</h1>
+
+      <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/new.png?w=576" alt="Hero Image" class="hero-img">
+      <p>Solusi lengkap untuk TopUp e-Wallet, Game, Bayar Tagihan,Isi Paket Data,Pulsa dan Otomatisasi transaksi lainnya dengan sistem aman dan stabil.</p>
+      <!-- Logo Play Store -->
+<!-- Logo Play Store -->
+<a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" 
+         alt="Google Play"
+         class="play-anim"
+         style="width:150px; height:auto; display:block; margin:0 auto;">
+</a>
+<br>
+      <a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" class="cta-btn">Dwonload Aplikasi</a>
+    
+      <br>
+      <!-- Slider Foto Berjalan -->
+<div class="slider-container">
+  <div class="slider-track">
+    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251119_181621.png?w=576" alt="">
+    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211924.png?w=576" alt="">
+    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211743.png?w=576" alt="">
+    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211604.png?w=576" alt="">
+
+    <!-- Copy lagi buat efek infinite -->
+   <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251119_181621.png?w=576" alt="">
+    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211924.png?w=576" alt="">
+    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211743.png?w=576" alt="">
+    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211604.png?w=576" alt="">
+  </div>
+</div>
+
+    
+    </section>
+    <!-- Stats Section -->
+<section class="stats">
+  <div class="stat-item">
+    <h3 class="count" data-target="2200">10K+</h3>
+    <p>Pengguna Aktif</p>
+  </div>
+  <div class="stat-item">
+    <h3 class="count" data-target="15000">50K+</h3>
+    <p>Transaksi Bulanan</p>
+  </div>
+  <div class="stat-item">
+    <h3 class="count" data-target="50000000">50K+</h3>
+    <p>Omset Bulanan</p>
+  </div>
+  <div class="stat-item">
+    <h3 class="count" data-target="99.8">99.8%</h3>
+    <p>Uptime Sistem</p>
+  </div>
+ <div class="stat-item clock-item">
+  <div class="clock-icon"></div>
+  <h3>24 Jam</h3>
+  <p>Transaksi Ontime</p>
+</div>
+
+</section>
+
+   <!-- Features Section -->
+<section class="features" id="layanan">
+  <h2 class="section-title">Fitur Utama FamsssPay</h2>
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <img src="https://img.icons8.com/?size=100&id=U9OSM6q5vXd3&format=png&color=000000" alt="Icon Cepat">
+      </div>
+      <h3>Transaksi Super Cepat</h3>
+      <p>Setiap pesanan diproses otomatis! Transaksi delay Terpending Jaminan garansi saldo reffund.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <img src="https://img.icons8.com/?size=100&id=uUIglpg1NDEw&format=png&color=000000" alt="Icon QRIS">
+      </div>
+      <h3>Fitur QRIS MerchantPay</h3>
+      <p>Memudahkan pengguna menerima Transaksi atau Topup saldo FamsssPay.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <img src="https://img.icons8.com/?size=100&id=xXolQILaFzkA&format=png&color=000000" alt="Icon Security">
+      </div>
+      <h3>Keamanan Tinggi</h3>
+      <p>Sistem terenkripsi dikelola Tim Pusat Exfams Cotery, aman untuk usaha dan transaksi Sehari - hari.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <img src="https://img.icons8.com/?size=100&id=soA5cPkB8Otz&format=png&color=000000" alt="Icon Otomatis">
+      </div>
+      <h3>Otomatisasi 24 Jam</h3>
+      <p>Transaksi Real-time Ontime<br>sepanjang hari penuh.</p>
+    </div>
+
+    
+  <!-- 🔹 Gambar tambahan di bawah teks -->
+  <div class="feature-image-extra">
+    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251119_141938.png?w=1024" 
+         alt="Gambar Tambahan"
+         style="width:100%; margin-top:10px; border-radius:10px;">
+  </div>
+</div>
+
+  </div>
+</section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="tentang">
+      <div class="testimonials-container">
+        <h2 class="section-title">Apa Kata Mereka?</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">“FamsssPay bagus banget aplikasinya, cepet dan nggak bikin pusing. Bener-bener bantu banget pas lagi butuh instant.”</p>
+            <div class="testimonial-author">— Dicaantiee</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">“Udah coba beberapa aplikasi lain, tapi FamsssPay paling stabil. Admin fast respon kalau ada kendala dan selalu dibantu.”</p>
+            <div class="testimonial-author">— Lidya Store</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">“Cocok untuk jualan di plosok desa dan menguntungkan, karena tersedia Topup via QRIS jadi lebih mudah, tinggal Scan beres.“</p>
+            <div class="testimonial-author">— Beny Cell</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2>Time To Start!</h2>
+      <p style="margin-bottom: 2rem; font-size: 1.05rem;">Belum terlambat memulai bisnis dari sekarang. Yuk! Mulai perjalanan usahamu dengan FamsssPay</p>
+      <a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" class="cta-btn">Dwonload FamsssPay .APK</a><br><br>
+
+<a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" 
+         alt="Google Play"
+         class="play-anim"
+         style="width:150px; height:auto; display:block; margin:0 auto;">
+</a>
+    </section>
+
+    
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 FamsssPay - All Rights Reserved. | Dipercaya oleh ribuan reseller dan bisnis online</p>
+    </footer>
+
+
+
+<script>
+// Deteksi iOS
+function isIOS() {
+    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
+// Munculkan popup iOS
+window.onload = function() {
+    if (isIOS()) {
+        document.getElementById("iosPopup").style.display = "flex";
+
+        // ❌ Tidak bisa ditutup — menonaktifkan back & tap
+        document.body.style.overflow = "hidden";
+        document.getElementById("iosPopup").addEventListener("click", e => {
+            e.stopPropagation();
+        });
+    }
+};
+</script>
+
+
+    <script>
+// Fungsi animasi count up
+function animateCount(el) {
+  const target = parseFloat(el.getAttribute("data-target"));
+  const duration = 1500;
+  const start = 0;
+  const stepTime = 15;
+
+  let current = start;
+  let increment = (target - start) / (duration / stepTime);
+
+  const counter = setInterval(() => {
+    current += increment;
+
+    if (current >= target) {
+      current = target;
+      clearInterval(counter);
+    }
+
+    // Format angka
+    if (target >= 1000) {
+      el.textContent = Math.floor(current).toLocaleString() + "+";
+    } else if (String(target).includes(".")) {
+      el.textContent = current.toFixed(1) + "%";
+    } else {
+      el.textContent = Math.floor(current);
+    }
+
+  }, stepTime);
+}
+
+// Observer supaya animasi muncul saat elemen terlihat
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+
+      const countEl = entry.target.querySelector(".count");
+      animateCount(countEl);
+
+      // Biar gak animasi ulang saat discroll lagi
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+// Apply observer ke tiap stat-item
+document.querySelectorAll(".stat-item").forEach(item => {
+  observer.observe(item);
+});
+</script>
+
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const appleMenu = document.getElementById("appleMenu");
+      const closeMenu = document.getElementById("closeMenu");
+      menuToggle.addEventListener("click", () => {
+        appleMenu.classList.add("active");
+      });
+      closeMenu.addEventListener("click", () => {
+        appleMenu.classList.remove("active");
+      });
+
+      document.querySelectorAll(".stat-item").forEach(item => {
+  if (!item.classList.contains("clock-item")) {
+    observer.observe(item); // hanya stat-item biasa
+  } else {
+    // animasi clock muncul
+    item.classList.add("visible");
+  }
+});
+
+setInterva(function () {
+    if (window.outerWidth - window.innerWidth > 200 || 
+        window.outerHeight - window.innerHeight > 200) {
+        location.reload();
+    }
+}, 500);
+
+(function() {
+    const element = new Image();
+    Object.defineProperty(element, 'id', {
+        get: function () {
+            window.location.href = "about:blank"; // tutup halaman
+        }
+    });
+    console.log(element);
+})();
+
+document.addEventListener("keydown", function(e) {
+    if (e.keyCode === 123) e.preventDefault(); // F12
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 73) e.preventDefault(); // Ctrl+Shift+I
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 67) e.preventDefault(); // Ctrl+Shift+C
+    if (e.ctrlKey && e.keyCode === 85) e.preventDefault(); // Ctrl+U
+});
+
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+    </script>
+  </body>
+</html>
