@@ -2,26 +2,88 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#2196f3">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image/webp" href="https://images.bukaolshop.com/2025-07/191835/a3097c1bccf5619325.png">
+  <title>FamsssPay</title>
 
-  <!-- Redirect otomatis -->
-  <meta http-equiv="refresh" content="0;url=https://play.google.com/store/apps/details?id=com.famssspaymobile">
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
 
-  <title>Redirecting...</title>
+    /* Background popup */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 9999;
+    }
+
+    /* Box popup */
+    .popup {
+      background: #fff;
+      padding: 20px 25px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 320px;
+      width: 100%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    .popup h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: #222;
+    }
+
+    .popup p {
+      font-size: 14px;
+      color: #444;
+      margin: 0 0 15px;
+    }
+  </style>
 </head>
 <body>
-  <script>
-    // Redirect tambahan (jaga-jaga jika meta refresh diblokir)
-    window.location.href = "https://play.google.com/store/apps/details?id=com.famssspaymobile";
-  </script>
 
-  <!-- Fallback jika redirect gagal -->
-  <p style="text-align:center; font-family:sans-serif; margin-top:40px;">
-    Mengarahkan ke Play Store...<br>
-    Jika tidak otomatis, klik:
-    <a href="https://play.google.com/store/apps/details?id=com.famssspaymobile">
-      Buka FamsssPay di Google Play
-    </a>
-  </p>
+<!-- Popup iOS -->
+<div id="popup-ios" class="popup-overlay">
+  <div class="popup">
+    <h2>Informasi</h2>
+    <p>Maaf, aplikasi tidak tersedia di IOS.<br>Hanya support Android.</p>
+  </div>
+</div>
+
+<!-- Popup sinyal tidak stabil -->
+<div id="popup-sinyal" class="popup-overlay">
+  <div class="popup">
+    <h2>Perhatian</h2>
+    <p>Sinyal tidak stabil, silakan restart dan buka kembali website.</p>
+  </div>
+</div>
+
+<script>
+  const playstoreURL = "https://play.google.com/store/apps/details?id=com.famssspaymobile";
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isIOS) {
+    // Tampilkan popup iOS
+    document.getElementById("popup-ios").style.display = "flex";
+  } else {
+    // Redirect otomatis
+    window.location.href = playstoreURL;
+
+    // Jika 3 detik belum redirect → tampilkan popup sinyal
+    setTimeout(() => {
+      if (!document.hidden) {
+        document.getElementById("popup-sinyal").style.display = "flex";
+      }
+    }, 3000);
+  }
+</script>
+
 </body>
 </html>
