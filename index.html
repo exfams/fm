@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="theme-color" content="#2196f3">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="icon" type="image/webp" href="https://images.bukaolshop.com/2025-07/191835/a3097c1bccf5619325.png">
+  <link rel="icon" type="image/webp" href="https://images.bukaolshop.com/2025-07/191835/a3097c1bccf5619325.png">
   <title>FamsssPay</title>
 
   <style>
@@ -21,6 +21,7 @@
       align-items: center;
       padding: 20px;
       z-index: 9999;
+      pointer-events: auto; /* kunci biar tidak bisa klik halaman */
     }
 
     /* Box popup */
@@ -50,7 +51,7 @@
 <body>
 
 <!-- Popup iOS -->
-<div id="popup-ios" class="popup-overlay">
+<div id="popup-ios" class="popup-overlay" style="pointer-events:auto;">
   <div class="popup">
     <h2>Informasi</h2>
     <p>Maaf, aplikasi tidak tersedia di IOS.<br>Hanya support Android.</p>
@@ -70,13 +71,18 @@
   const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   if (isIOS) {
-    // Tampilkan popup iOS
-    document.getElementById("popup-ios").style.display = "flex";
-  } else {
-    // Redirect otomatis
+    // Tampilkan popup iOS & lock halaman (tidak bisa klik apapun)
+    const popup = document.getElementById("popup-ios");
+    popup.style.display = "flex";
+
+    // Kunci seluruh halaman
+    document.body.style.overflow = "hidden";
+  } 
+  else {
+    // Redirect otomatis ke PlayStore
     window.location.href = playstoreURL;
 
-    // Jika 3 detik belum redirect → tampilkan popup sinyal
+    // Jika gagal redirect → tampilkan popup "sinyal" setelah 3 detik
     setTimeout(() => {
       if (!document.hidden) {
         document.getElementById("popup-sinyal").style.display = "flex";
