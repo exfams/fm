@@ -11,13 +11,13 @@
     <meta name="keywords" content="FamsssPay, Famspay, Famsspay, Fams Pay, aplikasi topup, PPOB, QRIS, topup e-wallet, isi pulsa, bayar tagihan">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FamsssPay">
-    <link rel="canonical" href="http://exfams.web.id/FamsssPay-APP">
+    <link rel="canonical" href="https://dwonload.famssspaymobile.app">
 
     <!-- Open Graph -->
     <meta property="og:title" content="FamsssPay - Platform Aplikasi Pembayaran Digital">
     <meta property="og:description" content="Solusi lengkap TopUp e-Wallet, Game, Bayar Tagihan, Isi Paket Data, Pulsa, dan Transaksi QRIS otomatis dengan sistem aman dan stabil.">
     <meta property="og:image" content="https://images.bukaolshop.com/2025-07/191835/a3097c1bccf5619325.png">
-    <meta property="og:url" content="http://exfams.web.id/FamsssPay-APP">
+    <meta property="og:url" content="https://dwonload.famssspaymobile.app">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
     <meta property="og:site_name" content="FamsssPay">
@@ -42,7 +42,7 @@
       "alternateName": ["Famspay", "Famsspay", "Fams Pay", "FamsssPay App"],
       "operatingSystem": "ANDROID",
       "applicationCategory": "FinanceApplication",
-      "url": "http://exfams.web.id/FamsssPay-APP",
+      "url": "https://dwonload.famssspaymobile.app",
       "downloadUrl": "https://play.google.com/store/apps/details?id=com.famssspaymobile",
       "image": "https://images.bukaolshop.com/2025-07/191835/a3097c1bccf5619325.png",
       "description": "Platform aplikasi pembayaran digital untuk TopUp e-Wallet, Game, Bayar Tagihan, Pulsa, dan Transaksi QRIS otomatis 24 jam.",
@@ -65,7 +65,7 @@
       "@type": "Organization",
       "name": "FamsssPay",
       "alternateName": ["Famspay", "Famsspay"],
-      "url": "http://exfams.web.id/FamsssPay-APP",
+      "url": "https://dwonload.famssspaymobile.app",
       "logo": "https://exfams.github.io/FamsssPay-Image/logoF.png",
       "sameAs": [
         "https://instagram.com/famssspay",
@@ -801,15 +801,6 @@
     </style>
   </head>
   <body>
-    
-<!-- 🔥 POPUP UNTUK IOS -->
-<div id="iosPopup" class="popup-overlay" style="display:none;">
-  <div class="popup-box">
-      <h3>Aplikasi Tidak Tersedia</h3>
-      <p>Maaf, aplikasi FamsssPay hanya<br>tersedia untuk Android.</p>
-  </div>   
-</div>
-
 
 
 <!-- Navbar -->
@@ -1006,25 +997,78 @@
     </footer>
 
 
+    <script>
+// Disable Right Click
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+// Disable Keyboard Shortcut
+document.addEventListener("keydown", function(e){
+
+    // F12
+    if(e.key === "F12"){
+        e.preventDefault();
+    }
+
+    // Ctrl + Shift + I/J/C
+    if(
+        e.ctrlKey &&
+        e.shiftKey &&
+        ["I","J","C"].includes(e.key.toUpperCase())
+    ){
+        e.preventDefault();
+    }
+
+    // Ctrl+U
+    if(e.ctrlKey && e.key.toUpperCase()=="U"){
+        e.preventDefault();
+    }
+
+    // Ctrl+S
+    if(e.ctrlKey && e.key.toUpperCase()=="S"){
+        e.preventDefault();
+    }
+
+    // Ctrl+P
+    if(e.ctrlKey && e.key.toUpperCase()=="P"){
+        e.preventDefault();
+    }
+
+});
+</script>
 
 <script>
-// Deteksi iOS
-function isIOS() {
-    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
-}
+(function () {
 
-// Munculkan popup iOS
-window.onload = function() {
-    if (isIOS()) {
-        document.getElementById("iosPopup").style.display = "flex";
+    const threshold = 160;
 
-        // ❌ Tidak bisa ditutup — menonaktifkan back & tap
-        document.body.style.overflow = "hidden";
-        document.getElementById("iosPopup").addEventListener("click", e => {
-            e.stopPropagation();
-        });
-    }
-};
+    setInterval(() => {
+
+        const widthDiff = window.outerWidth - window.innerWidth;
+        const heightDiff = window.outerHeight - window.innerHeight;
+
+        if (widthDiff > threshold || heightDiff > threshold) {
+
+            document.body.innerHTML = `
+            <div style="
+                position:fixed;
+                inset:0;
+                background:#fff;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                font-family:sans-serif;
+                font-size:24px;
+                font-weight:bold;
+                z-index:999999999;
+            ">
+                
+            </div>`;
+
+        }
+
+    },500);
+
+})();
 </script>
 
 
