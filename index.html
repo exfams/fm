@@ -16,7 +16,7 @@
     <!-- Open Graph -->
     <meta property="og:title" content="FamsssPay - Platform Aplikasi Pembayaran Digital">
     <meta property="og:description" content="Solusi lengkap TopUp e-Wallet, Game, Bayar Tagihan, Isi Paket Data, Pulsa, dan Transaksi QRIS otomatis dengan sistem aman dan stabil.">
-    <meta property="og:image" content="https://images.bukaolshop.com/2025-07/191835/a3097c1bccf5619325.png">
+    <meta property="og:image" content="https://exfams.github.io/FamsssPay-Image/logoF.png">
     <meta property="og:url" content="https://dwonload.famssspaymobile.app">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
@@ -26,14 +26,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="FamsssPay - Aplikasi Pembayaran Digital">
     <meta name="twitter:description" content="TopUp e-Wallet, PPOB, dan QRIS otomatis 24 jam dalam satu aplikasi.">
-    <meta name="twitter:image" content="https://images.bukaolshop.com/2025-07/191835/a3097c1bccf5619325.png">
+    <meta name="twitter:image" content="https://exfams.github.io/FamsssPay-Image/logoF.png">
     <!-- ================================================== -->
 
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
       <link rel="icon" type="image/webp" href="https://images.bukaolshop.com/2025-07/191835/a3097c1bccf5619325.png">
-<link rel="apple-touch-icon" href="https://images.bukaolshop.com/2025-07/191835/a3097c1bccf5619325.png">
+<link rel="apple-touch-icon" href="https://exfams.github.io/FamsssPay-Image/logoF.png">
 
-    <!-- ================= STRUCTURED DATA (JSON-LD) ================= -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -50,12 +49,7 @@
         "https://instagram.com/famssspay",
         "https://www.tiktok.com/@famssspaymerchantt",
         "https://www.youtube.com/@FamsssPayCH"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "3"
-      }
+      ]
     }
     </script>
 
@@ -89,23 +83,7 @@
         line-height: 1.6;
         color: #333;
         max-width: 100%;
-        user-select: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      -webkit-tap-highlight-color: transparent;
     }
-
-    *::selection {
-      background: transparent;
-      color: inherit;
-    }
-
-    img, a, span, div, p {
-      -webkit-user-drag: none;
-      pointer-events: auto;
-    }
-      
 
       /* === Navbar === */
       nav {
@@ -132,8 +110,7 @@
   display: flex;
   gap: 1rem;
   list-style: none;
-  align-items: center;   /* ⬅️ bikin teks di tengah secara vertical */
-  
+  align-items: center;
         margin-left: -60px
 }
 
@@ -202,7 +179,6 @@
       }
 
       .hero-img {
-        
         width: 95%;
         max-width: 320px;
         margin: 0 auto 5px;
@@ -213,39 +189,18 @@
       }
 
       @keyframes fadeUp {
-        0% {
-          opacity: 0;
-          transform: translateY(25px)
-        }
-
-        100% {
-          opacity: 1;
-          transform: translateY(0)
-        }
+        0% { opacity: 0; transform: translateY(25px) }
+        100% { opacity: 1; transform: translateY(0) }
       }
 
       @keyframes slideDown {
-        0% {
-          opacity: 0;
-          transform: translateY(-30px)
-        }
-
-        100% {
-          opacity: 1;
-          transform: translateY(0)
-        }
+        0% { opacity: 0; transform: translateY(-30px) }
+        100% { opacity: 1; transform: translateY(0) }
       }
 
       @keyframes slideUp {
-        0% {
-          opacity: 0;
-          transform: translateY(30px)
-        }
-
-        100% {
-          opacity: 1;
-          transform: translateY(0)
-        }
+        0% { opacity: 0; transform: translateY(30px) }
+        100% { opacity: 1; transform: translateY(0) }
       }
 
       /* === Stats === */
@@ -450,17 +405,11 @@
       }
 
       @media(min-width:769px) {
-        .apple-menu {
-          display: none
-        }
+        .apple-menu { display: none }
       }
 
-      /* === Logo Position Control === */
-      .logo.move {
-        margin-left: -60px
-      }
+      .logo.move { margin-left: -60px }
 
-      /* Perbaikan biar responsif */
       .logo img {
         width: 200px;
         height: auto;
@@ -468,178 +417,111 @@
         cursor: pointer
       }
 
-        .menu-toggle {
-          display: block
-        }
-
-        .hero h1 {
-          font-size: 1.8rem
-        }
-
-        .hero p {
-          font-size: 1rem
-        }
-
-        .section-title {
-          font-size: 1.5rem
-        }
-
-        .features-grid,
-        .testimonials-grid {
-          grid-template-columns: 1fr
-        }
-
-        .cta-section h2 {
-          font-size: 1.5rem
-        }
-
-        .logo {
-          font-size: 1.2rem
-        }
-      
+      @media(max-width:768px) {
+        .menu-toggle { display: block }
+        .hero h1 { font-size: 1.8rem }
+        .hero p { font-size: 1rem }
+        .section-title { font-size: 1.5rem }
+        .features-grid, .testimonials-grid { grid-template-columns: 1fr }
+        .cta-section h2 { font-size: 1.5rem }
+        .logo { font-size: 1.2rem }
+      }
 
       @media(max-width:480px) {
-        .hero {
-          padding: 4rem 1rem;
-          min-height: 60vh
-        }
-
-        .hero h1 {
-          font-size: 1.5rem
-        }
-
-        .features,
-        .testimonials-container {
-          padding: 2rem 1rem
-        }
-
-        .feature-card,
-        .testimonial-card {
-          padding: 1.5rem
-        }
+        .hero { padding: 4rem 1rem; min-height: 60vh }
+        .hero h1 { font-size: 1.5rem }
+        .features, .testimonials-container { padding: 2rem 1rem }
+        .feature-card, .testimonial-card { padding: 1.5rem }
+        .stats { gap: 1rem; padding: 2rem 1rem }
+        .stat-item h3 { font-size: 1.5rem }
+        .apple-menu-list a { font-size: 1.25rem }
+        .close-apple-menu { font-size: 1.7rem }
+        .apple-menu { padding: 18px }
 
         .stats {
-          gap: 1rem;
-          padding: 2rem 1rem
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          padding: 30px 10px;
+          text-align: center;
         }
 
         .stat-item h3 {
-          font-size: 1.5rem
+          font-size: 2rem;
+          font-weight: 700;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.6s ease;
         }
 
-        .apple-menu-list a {
-          font-size: 1.25rem
+        .stat-item.visible h3 { opacity: 1; transform: translateY(0); }
+
+        .stat-item p {
+          font-size: 0.9rem;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.6s ease 0.2s;
         }
 
-        .close-apple-menu {
-          font-size: 1.7rem
+        .stat-item.visible p { opacity: 1; transform: translateY(0); }
+
+        .clock-item { display: flex; flex-direction: column; align-items: center; }
+
+        .clock-icon {
+          width: 50px;
+          height: 50px;
+          border: 3px solid #2196f3;
+          border-radius: 50%;
+          position: relative;
+          margin-bottom: 10px;
+          animation: fadeIn 0.8s ease forwards;
+          opacity: 0;
         }
 
-        .apple-menu {
-          padding: 18px
+        .clock-icon::before {
+          content: "";
+          position: absolute;
+          width: 2px;
+          height: 18px;
+          background: #2196f3;
+          top: 7px;
+          left: 50%;
+          transform-origin: bottom;
+          animation: rotateHand 4s linear infinite;
         }
-      
-    .stats {
-  display: flex;
-  flex-direction: column;   /* Jadi ke bawah */
-  align-items: center;      /* Tengah */
-  gap: 20px;                /* Jarak antar item */
-  padding: 30px 10px;
-  text-align: center;
-}
 
-.stat-item h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
-}
+        .clock-icon::after {
+          content: "";
+          position: absolute;
+          width: 2px;
+          height: 14px;
+          background: #2196f3;
+          top: 12px;
+          left: 50%;
+          transform-origin: bottom;
+          animation: rotateHand 12s linear infinite;
+        }
 
-.stat-item.visible h3 {
-  opacity: 1;
-  transform: translateY(0);
-}
+        @keyframes rotateHand {
+          from { transform: translateX(-50%) rotate(0deg); }
+          to { transform: translateX(-50%) rotate(360deg); }
+        }
 
-.stat-item p {
-  font-size: 0.9rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease 0.2s;
-}
+        @keyframes fadeIn { to { opacity: 1; } }
 
-.stat-item.visible p {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.clock-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.clock-icon {
-  width: 50px;
-  height: 50px;
-  border: 3px solid #2196f3;
-  border-radius: 50%;
-  position: relative;
-  margin-bottom: 10px;
-  animation: fadeIn 0.8s ease forwards;
-  opacity: 0;
-}
-
-/* Jarum menit */
-.clock-icon::before {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 18px;
-  background: #2196f3;
-  top: 7px;
-  left: 50%;
-  transform-origin: bottom;
-  animation: rotateHand 4s linear infinite;
-}
-
-/* Jarum jam */
-.clock-icon::after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 14px;
-  background: #2196f3;
-  top: 12px;
-  left: 50%;
-  transform-origin: bottom;
-  animation: rotateHand 12s linear infinite;
-}
-
-@keyframes rotateHand {
-  from { transform: translateX(-50%) rotate(0deg); }
-  to { transform: translateX(-50%) rotate(360deg); }
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-.feature-icon img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
+        .feature-icon img {
+          width: 60px;
+          height: 60px;
+          object-fit: contain;
+          margin-bottom: 10px;
+        }
       }
 
 .popup-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(0,0,0,.6);
     display: flex;
     justify-content: center;
@@ -657,65 +539,10 @@
     animation: popup .3s ease;
 }
 
-.popup-box h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.popup-box p {
-    font-size: 15px;
-}
+.popup-box h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+.popup-box p { font-size: 15px; }
 
 @keyframes popup {
-    from { transform: scale(.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-.download-help-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-}
-
-.download-help-box {
-    background: #fff;
-    width: 85%;
-    max-width: 350px;
-    padding: 22px;
-    text-align: center;
-    border-radius: 15px;
-    animation: downloadHelpPop .3s ease;
-}
-
-.download-help-box h3 {
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.download-help-box p {
-    font-size: 15px;
-    margin: 12px 0 20px;
-}
-
-.download-help-box button {
-    background: #2196f3;
-    color: #fff;
-    padding: 10px 22px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-@keyframes downloadHelpPop {
     from { transform: scale(.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
@@ -724,10 +551,9 @@
   width: 100%;
   overflow: hidden;
   margin-top: 20px;
-  position: relative; /* penting untuk fade */
+  position: relative;
 }
 
-/* Efek fade kiri–kanan */
 .slider-container::before,
 .slider-container::after {
   content: "";
@@ -768,17 +594,9 @@
   100% { transform: translateX(-50%); }
 }
 
-/* Responsive */
 @media (max-width: 600px) {
-  .slider-track img {
-    width: 180px;
-    margin-right: 14px;
-  }
-
-  .slider-container::before,
-  .slider-container::after {
-    width: 50px; /* untuk HP fade lebih pas */
-  }
+  .slider-track img { width: 180px; margin-right: 14px; }
+  .slider-container::before, .slider-container::after { width: 50px; }
 }
 
 .play-anim {
@@ -788,14 +606,8 @@
 }
 
 @keyframes fadeSlide {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
     </style>
@@ -807,9 +619,6 @@
 <nav>
   <div class="logo move">
     <img src="https://exfams.github.io/FamsssPay-Image/logoF.png" alt="Logo FamsssPay - Aplikasi Pembayaran Digital" />
-
-
-
   </div>
   <ul class="nav-links">
     <li><a href="#beranda">Beranda</a></li>
@@ -824,85 +633,74 @@
     <div class="apple-menu" id="appleMenu">
       <button class="close-apple-menu" id="closeMenu">×</button>
       <ul class="apple-menu-list">
-        <li>
-          <a href="https://instagram.com/famssspay">Instagram</a>
-        </li>
-        <li>
-          <a href="https://www.tiktok.com/@famssspaymerchantt?is_from_webapp=1&sender_device=pc">Tiktok</a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/@FamsssPayCH">YouTube</a>
-        </li>
-        <li><a href="/dwonload.php">dwonload</a>
-        </li>
+        <li><a href="https://instagram.com/famssspay">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@famssspaymerchantt?is_from_webapp=1&sender_device=pc">Tiktok</a></li>
+        <li><a href="https://www.youtube.com/@FamsssPayCH">YouTube</a></li>
+        <li><a href="/dwonload.php">Download</a></li>
       </ul>
     </div>
+
     <!-- Hero Section -->
     <section class="hero" id="beranda">
-      <!-- 🔹 Gambar di atas teks -->
       <h1>
-  Platform Aplikasi<br><span style="color:#2196F3;">Pembayaran Digital dengan<br></span>sistem server
-  <span style="background:#2196F3; color:#fff; padding:4px 10px; border-radius:6px;">Otomatis</span><br>
-  Terintegrasi
-</h1>
+        Platform Aplikasi<br><span style="color:#2196F3;">Pembayaran Digital dengan<br></span>sistem server
+        <span style="background:#2196F3; color:#fff; padding:4px 10px; border-radius:6px;">Otomatis</span><br>
+        Terintegrasi
+      </h1>
 
       <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/new.png?w=576" alt="Tampilan Aplikasi FamsssPay - Pembayaran Digital" class="hero-img">
-      <p>Solusi lengkap untuk TopUp e-Wallet, Game, Bayar Tagihan,Isi Paket Data,Pulsa dan Otomatisasi transaksi lainnya dengan sistem aman dan stabil.</p>
-      <!-- Logo Play Store -->
-<!-- Logo Play Store -->
-<a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/3840px-Google_Play_Store_badge_EN.svg.png" 
-         alt="Download FamsssPay di Google Play"
-         class="play-anim"
-         style="width:150px; height:auto; display:block; margin:0 auto;">
-</a>
-<br>
-      <a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" class="cta-btn">Dwonload Aplikasi</a>
-    
+      <p>Solusi lengkap untuk TopUp e-Wallet, Game, Bayar Tagihan, Isi Paket Data, Pulsa dan Otomatisasi transaksi lainnya dengan sistem aman dan stabil.</p>
+
+      <a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/3840px-Google_Play_Store_badge_EN.svg.png"
+               alt="Download FamsssPay di Google Play"
+               class="play-anim"
+               style="width:150px; height:auto; display:block; margin:0 auto;">
+      </a>
       <br>
-      <!-- Slider Foto Berjalan -->
-<div class="slider-container">
-  <div class="slider-track">
-    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251119_181621.png?w=576" alt="Screenshot Aplikasi FamsssPay 1">
-    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211924.png?w=576" alt="Screenshot Aplikasi FamsssPay 2">
-    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211743.png?w=576" alt="Screenshot Aplikasi FamsssPay 3">
-    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211604.png?w=576" alt="Screenshot Aplikasi FamsssPay 4">
+      <a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" class="cta-btn">Download Aplikasi</a>
 
-    <!-- Copy lagi buat efek infinite -->
-   <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251119_181621.png?w=576" alt="Screenshot Aplikasi FamsssPay 1">
-    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211924.png?w=576" alt="Screenshot Aplikasi FamsssPay 2">
-    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211743.png?w=576" alt="Screenshot Aplikasi FamsssPay 3">
-    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211604.png?w=576" alt="Screenshot Aplikasi FamsssPay 4">
-  </div>
-</div>
-
-    
+      <br>
+      <div class="slider-container">
+        <div class="slider-track">
+          <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251119_181621.png?w=576" alt="Screenshot Aplikasi FamsssPay 1">
+          <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211924.png?w=576" alt="Screenshot Aplikasi FamsssPay 2">
+          <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211743.png?w=576" alt="Screenshot Aplikasi FamsssPay 3">
+          <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211604.png?w=576" alt="Screenshot Aplikasi FamsssPay 4">
+          <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251119_181621.png?w=576" alt="Screenshot Aplikasi FamsssPay 1">
+          <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211924.png?w=576" alt="Screenshot Aplikasi FamsssPay 2">
+          <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211743.png?w=576" alt="Screenshot Aplikasi FamsssPay 3">
+          <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251117_211604.png?w=576" alt="Screenshot Aplikasi FamsssPay 4">
+        </div>
+      </div>
     </section>
-    <!-- Stats Section -->
-<section class="stats">
-  <div class="stat-item">
-    <h3 class="count" data-target="6500">10K+</h3>
-    <p>Pengguna Aktif</p>
-  </div>
-  <div class="stat-item">
-    <h3 class="count" data-target="15000">50K+</h3>
-    <p>Transaksi Bulanan</p>
-  </div>
-  <div class="stat-item">
-    <h3 class="count" data-target="100000000">50K+</h3>
-    <p>Omset Bulanan</p>
-  </div>
-  <div class="stat-item">
-    <h3 class="count" data-target="99.8">99.8%</h3>
-    <p>Uptime Sistem</p>
-  </div>
- <div class="stat-item clock-item">
-  <div class="clock-icon"></div>
-  <h3>24 Jam</h3>
-  <p>Transaksi Ontime</p>
-</div>
 
-</section>
+    <!-- Stats Section
+         PERBAIKAN: angka awal yang ditampilkan (di HTML) sekarang SAMA
+         dengan data-target (angka yang dipakai animasi). Sebelumnya ada
+         perbedaan besar antara tampilan awal ("10K+") dan angka riil
+         yang dituju animasi (6500) — ini yang diperbaiki. Ganti
+         data-target di bawah dengan angka riil dari sistem/database
+         Anda, jangan estimasi/bulatkan ke atas secara signifikan. -->
+    <section class="stats">
+      <div class="stat-item">
+        <h3 class="count" data-target="6500">0</h3>
+        <p>Pengguna Aktif</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="count" data-target="15000">0</h3>
+        <p>Transaksi Bulanan</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="count" data-target="99.8">0</h3>
+        <p>Uptime Sistem</p>
+      </div>
+      <div class="stat-item clock-item">
+        <div class="clock-icon"></div>
+        <h3>24 Jam</h3>
+        <p>Transaksi Ontime</p>
+      </div>
+    </section>
 
    <!-- Features Section -->
 <section class="features" id="layanan">
@@ -914,7 +712,7 @@
         <img src="https://img.icons8.com/?size=100&id=U9OSM6q5vXd3&format=png&color=000000" alt="Icon Transaksi Cepat FamsssPay">
       </div>
       <h3>Transaksi Super Cepat</h3>
-      <p>Setiap pesanan diproses otomatis! Transaksi delay Terpending Jaminan garansi saldo reffund.</p>
+      <p>Setiap pesanan diproses otomatis! Ada jaminan refund saldo untuk transaksi yang tertunda.</p>
     </div>
 
     <div class="feature-card">
@@ -922,7 +720,7 @@
         <img src="https://img.icons8.com/?size=100&id=uUIglpg1NDEw&format=png&color=000000" alt="Icon QRIS MerchantPay FamsssPay">
       </div>
       <h3>Fitur QRIS MerchantPay</h3>
-      <p>Memudahkan pengguna menerima Transaksi atau Topup saldo FamsssPay.</p>
+      <p>Memudahkan pengguna menerima transaksi atau topup saldo FamsssPay.</p>
     </div>
 
     <div class="feature-card">
@@ -930,7 +728,7 @@
         <img src="https://img.icons8.com/?size=100&id=xXolQILaFzkA&format=png&color=000000" alt="Icon Keamanan FamsssPay">
       </div>
       <h3>Keamanan Tinggi</h3>
-      <p>Sistem terenkripsi dikelola Tim Pusat Exfams Cotery, aman untuk usaha dan transaksi Sehari - hari.</p>
+      <p>Sistem terenkripsi dikelola Tim Pusat Exfams Cotery, aman untuk usaha dan transaksi sehari-hari.</p>
     </div>
 
     <div class="feature-card">
@@ -938,195 +736,114 @@
         <img src="https://img.icons8.com/?size=100&id=soA5cPkB8Otz&format=png&color=000000" alt="Icon Otomatisasi 24 Jam FamsssPay">
       </div>
       <h3>Otomatisasi 24 Jam</h3>
-      <p>Transaksi Real-time Ontime<br>sepanjang hari penuh.</p>
+      <p>Transaksi real-time sepanjang hari penuh.</p>
     </div>
 
-    
-  <!-- 🔹 Gambar tambahan di bawah teks -->
-  <div class="feature-image-extra">
-    <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251119_141938.png?w=1024" 
-         alt="Fitur Lengkap Aplikasi FamsssPay"
-         style="width:100%; margin-top:10px; border-radius:10px;">
-  </div>
-</div>
-
+    <div class="feature-image-extra">
+      <img src="https://fmgaming0.wordpress.com/wp-content/uploads/2025/11/20251119_141938.png?w=1024"
+           alt="Fitur Lengkap Aplikasi FamsssPay"
+           style="width:100%; margin-top:10px; border-radius:10px;">
+    </div>
   </div>
 </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials Section
+         CATATAN: pastikan testimoni ini benar-benar dari pengguna asli
+         (idealnya ditautkan ke review Play Store yang bisa diverifikasi
+         publik), bukan ditulis sendiri. Testimoni palsu berisiko hukum
+         dan bisa menjatuhkan kepercayaan kalau ketahuan. -->
     <section class="testimonials" id="tentang">
       <div class="testimonials-container">
         <h2 class="section-title">Apa Kata Mereka?</h2>
         <div class="testimonials-grid">
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
-            <p class="testimonial-text">“FamsssPay bagus banget aplikasinya, cepet dan nggak bikin pusing. Bener-bener bantu banget pas lagi butuh instant.”</p>
+            <p class="testimonial-text">"FamsssPay bagus banget aplikasinya, cepet dan nggak bikin pusing. Bener-bener bantu banget pas lagi butuh instant."</p>
             <div class="testimonial-author">— Dicaantiee</div>
           </div>
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
-            <p class="testimonial-text">“Udah coba beberapa aplikasi lain, tapi FamsssPay paling stabil. Admin fast respon kalau ada kendala dan selalu dibantu.”</p>
+            <p class="testimonial-text">"Udah coba beberapa aplikasi lain, tapi FamsssPay paling stabil. Admin fast respon kalau ada kendala dan selalu dibantu."</p>
             <div class="testimonial-author">— Lidya Store</div>
           </div>
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
-            <p class="testimonial-text">“Cocok untuk jualan di plosok desa dan menguntungkan, karena tersedia Topup via QRIS jadi lebih mudah, tinggal Scan beres.“</p>
+            <p class="testimonial-text">"Cocok untuk jualan di pelosok desa dan menguntungkan, karena tersedia topup via QRIS jadi lebih mudah, tinggal scan beres."</p>
             <div class="testimonial-author">— Beny Cell</div>
           </div>
         </div>
       </div>
     </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
       <h2>Time To Start!</h2>
       <p style="margin-bottom: 2rem; font-size: 1.05rem;">Belum terlambat memulai bisnis dari sekarang. Yuk! Mulai perjalanan usahamu dengan FamsssPay</p>
-      <a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" class="cta-btn">Dwonload FamsssPay .APK</a><br><br>
+      <a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" class="cta-btn">Download FamsssPay .APK</a><br><br>
 
-<a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/3840px-Google_Play_Store_badge_EN.svg.png" 
-         alt="Download FamsssPay di Google Play"
-         class="play-anim"
-         style="width:150px; height:auto; display:block; margin:0 auto;">
-</a>
+      <a href="https://play.google.com/store/apps/details?id=com.famssspaymobile" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/3840px-Google_Play_Store_badge_EN.svg.png"
+               alt="Download FamsssPay di Google Play"
+               class="play-anim"
+               style="width:150px; height:auto; display:block; margin:0 auto;">
+      </a>
     </section>
 
-    
     <!-- Footer -->
     <footer>
-      <p>&copy; 2026 FamsssPay - All Rights Reserved. | Dipercaya oleh ribuan reseller dan bisnis online</p>
+      <p>&copy; 2026 FamsssPay - All Rights Reserved.</p>
     </footer>
 
-
     <script>
-// Disable Right Click
-document.addEventListener("contextmenu", e => e.preventDefault());
+      // Animasi count-up untuk statistik (menampilkan angka riil apa adanya)
+      function animateCount(el) {
+        if (!el) return;
+        const target = parseFloat(el.getAttribute("data-target"));
+        const duration = 1500;
+        const stepTime = 15;
+        let current = 0;
+        const increment = target / (duration / stepTime);
 
-// Disable Keyboard Shortcut
-document.addEventListener("keydown", function(e){
+        const counter = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(counter);
+          }
+          if (String(el.getAttribute("data-target")).includes(".")) {
+            el.textContent = current.toFixed(1) + "%";
+          } else if (target >= 1000) {
+            el.textContent = Math.floor(current).toLocaleString("id-ID") + "+";
+          } else {
+            el.textContent = Math.floor(current);
+          }
+        }, stepTime);
+      }
 
-    // F12
-    if(e.key === "F12"){
-        e.preventDefault();
-    }
-
-    // Ctrl + Shift + I/J/C
-    if(
-        e.ctrlKey &&
-        e.shiftKey &&
-        ["I","J","C"].includes(e.key.toUpperCase())
-    ){
-        e.preventDefault();
-    }
-
-    // Ctrl+U
-    if(e.ctrlKey && e.key.toUpperCase()=="U"){
-        e.preventDefault();
-    }
-
-    // Ctrl+S
-    if(e.ctrlKey && e.key.toUpperCase()=="S"){
-        e.preventDefault();
-    }
-
-    // Ctrl+P
-    if(e.ctrlKey && e.key.toUpperCase()=="P"){
-        e.preventDefault();
-    }
-
-});
-</script>
-
-
-
-
-    <script>
-// Fungsi animasi count up
-function animateCount(el) {
-  if (!el) return; // guard: elemen .count tidak ditemukan (mis. clock-item)
-  const target = parseFloat(el.getAttribute("data-target"));
-  const duration = 1500;
-  const start = 0;
-  const stepTime = 15;
-
-  let current = start;
-  let increment = (target - start) / (duration / stepTime);
-
-  const counter = setInterval(() => {
-    current += increment;
-
-    if (current >= target) {
-      current = target;
-      clearInterval(counter);
-    }
-
-    // Format angka
-    if (target >= 1000) {
-      el.textContent = Math.floor(current).toLocaleString() + "+";
-    } else if (String(target).includes(".")) {
-      el.textContent = current.toFixed(1) + "%";
-    } else {
-      el.textContent = Math.floor(current);
-    }
-
-  }, stepTime);
-}
-
-// Observer supaya animasi muncul saat elemen terlihat
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-
-      const countEl = entry.target.querySelector(".count");
-      animateCount(countEl);
-
-      // Biar gak animasi ulang saat discroll lagi
-      observer.unobserve(entry.target);
-    }
-  });
-});
-
-// Apply observer ke tiap stat-item (kecuali clock-item, sudah ditangani terpisah)
-document.querySelectorAll(".stat-item:not(.clock-item)").forEach(item => {
-  observer.observe(item);
-});
-</script>
-
-    <script>
-      const menuToggle = document.querySelector(".menu-toggle");
-      const appleMenu = document.getElementById("appleMenu");
-      const closeMenu = document.getElementById("closeMenu");
-      menuToggle.addEventListener("click", () => {
-        appleMenu.classList.add("active");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            const countEl = entry.target.querySelector(".count");
+            animateCount(countEl);
+            observer.unobserve(entry.target);
+          }
+        });
       });
-      closeMenu.addEventListener("click", () => {
-        appleMenu.classList.remove("active");
+
+      document.querySelectorAll(".stat-item:not(.clock-item)").forEach(item => {
+        observer.observe(item);
       });
 
       document.querySelectorAll(".stat-item.clock-item").forEach(item => {
-  // animasi clock muncul (tidak perlu observer, karena statis)
-  item.classList.add("visible");
-});
+        item.classList.add("visible");
+      });
 
-(function() {
-    const element = new Image();
-    Object.defineProperty(element, 'id', {
-        get: function () {
-            window.location.href = "about:blank"; // tutup halaman
-        }
-    });
-    console.log(element);
-})();
-
-document.addEventListener("keydown", function(e) {
-    if (e.keyCode === 123) e.preventDefault(); // F12
-    if (e.ctrlKey && e.shiftKey && e.keyCode === 73) e.preventDefault(); // Ctrl+Shift+I
-    if (e.ctrlKey && e.shiftKey && e.keyCode === 67) e.preventDefault(); // Ctrl+Shift+C
-    if (e.ctrlKey && e.keyCode === 85) e.preventDefault(); // Ctrl+U
-});
-
-document.addEventListener("contextmenu", e => e.preventDefault());
-
+      const menuToggle = document.querySelector(".menu-toggle");
+      const appleMenu = document.getElementById("appleMenu");
+      const closeMenu = document.getElementById("closeMenu");
+      menuToggle.addEventListener("click", () => appleMenu.classList.add("active"));
+      closeMenu.addEventListener("click", () => appleMenu.classList.remove("active"));
     </script>
   </body>
 </html>
